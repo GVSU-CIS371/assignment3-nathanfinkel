@@ -1,10 +1,19 @@
 <template>
   <div class="froth">
-    <div v-for=" in 5" class="foam"></div>
+    <div v-for=" in 5" class="foam" :style="{backgroundColor: type.color}"></div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+type Props = {
+  type: {
+    id: string;
+    name: string;
+    color: string;
+  };
+};
+defineProps<Props>();
+</script>
 <style lang="scss" scoped>
 .froth {
   overflow: visible;
